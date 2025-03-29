@@ -24,7 +24,7 @@ class Cell:
             if has_wall:
                 self.__win.draw_line(line, "black")
             else:
-                line.__win.draw_line(line, "white")
+                self.__win.draw_line(line, "white")
     
     def draw_move(self, to_cell, undo=False):
         color = "red" if undo is False else "gray"

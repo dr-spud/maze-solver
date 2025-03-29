@@ -3,6 +3,7 @@ from cell import Cell
 from maze import Maze
 
 def main():
+    print("starting program...")
     num_rows = 12
     num_cols = 16
     margin = 50
@@ -16,4 +17,5 @@ def main():
 
     win.wait_for_close()
 
+main()
 
