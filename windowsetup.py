@@ -47,45 +47,6 @@ class Line:
             self.point1.x, self.point1.y, self.point2.x, self.point2.y, fill=fill_color, width=2
         )
 
-class Cell:
-    def __init__(
-            self,
-            x1,
-            x2,
-            y1,
-            y2,
-            win,
-            has_left_wall=True,
-            has_right_wall=True,
-            has_top_wall=True,
-            has_bottom_wall=True  
-    ):
-        self.has_left_wall = has_left_wall
-        self.has_right_wall = has_right_wall
-        self.has_top_wall = has_top_wall
-        self.has_bottom_wall = has_bottom_wall
-        self.__x1 = x1
-        self.__x2 = x2
-        self.__y1 = y1
-        self.__y2 = y2
-        self.__win = win
-    
-    def draw(self):
-        walls = {
-            "left": (self.has_left_wall, Point(self.__x1, self.__y1), Point(self.__x1, self.__y2)),
-            "right": (self.has_right_wall, Point(self.__x2, self.__y1), Point(self.__x2, self.__y2)),
-            "top": (self.has_top_wall, Point(self.__x1, self.__y1), Point(self.__x2, self.__y1)),
-            "bottom": (self.has_bottom_wall, Point(self.__x1, self.__y2,), Point(self.__x2, self.__y2))
-        }
-
-        for wall_name, (has_wall, p1, p2) in walls.items():
-            if has_wall:
-                line = Line(p1, p2)
-                self.__win.draw_line(line, "black")
-
-
-
-
         
     
 
