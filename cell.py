@@ -10,8 +10,14 @@ class Cell:
         self.__y1 = None
         self.__y2 = None
         self.__win = win
+        self.visited = False
     
     def draw(self, x1, y1, x2, y2):
+        self.__x1 = x1
+        self.__y1 = y1
+        self.__x2 = x2
+        self.__y2 = y2
+        
         walls = {
             "left": (self.has_left_wall, Point(x1, y1), Point(x1, y2)),
             "right": (self.has_right_wall, Point(x2, y1), Point(x2, y2)),
